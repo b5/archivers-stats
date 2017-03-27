@@ -22,7 +22,7 @@
     "dotenv": "^2.0.0",
     "font-awesome": "^4.7.0",
     "mozaik": "^2.0.0-alpha.13",
-    "mozaik-ext-airtable": "0.0.1",
+    "mozaik-ext-airtable": "0.0.2",
     "mozaik-ext-github": "^2.0.0-alpha.3",
     "mozaik-ext-json": "0.0.12",
     "mozaik-ext-travis": "^2.0.0-alpha.2",
