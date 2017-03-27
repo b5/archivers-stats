@@ -2,7 +2,7 @@
   "name": "mozaik-demo",
   "version": "2.0.0-alpha.13",
   "description": "Mozaïk demo dashboard",
-  "homepage" : "http://stats.archivers.space",
+  "homepage" : "http://archivers-stats.herokuapp.com",
   "repository": {
     "type": "git",
     "url": "git://github.com/plouc/mozaik-demo"
