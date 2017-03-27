@@ -11,7 +11,7 @@ port: 5000
 # define duration between each dashboard rotation (ms)
 rotationDuration: 10000
 # define the interval used by Mozaïk Bus to call registered APIs
-apisPollInterval: 1000000
+apisPollInterval: 10000000
 
 dashboards:
 - columns: 4
@@ -23,7 +23,7 @@ dashboards:
     title:        Datarescue Events
     table:        Events
     view:         Data Rescues
-    columns:      3
+    columns:      2
     rows:         1
     x:            0
     y:            1

@@ -28,10 +28,7 @@ const client = (mozaik) => {
     const apiCalls = {
         data(params) {
             return buildApiRequest(params)
-                .then(res => {
-                    console.log(JSON.parse(res.text));
-                    return JSON.parse(res.text)
-                })
+                .then(res => { return { response: JSON.parse(res.text)}; })
             ;
         }
     };
