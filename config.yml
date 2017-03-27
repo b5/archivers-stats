@@ -1,0 +1,52 @@
+#
+# mozaik generic demo dashboard
+#
+# It's not required, but you should add this env var,
+# without it, you'll probably reach the API rate limit.
+#
+# GITHUB_API_TOKEN=xxxxx
+#
+port: 5000
+
+# define duration between each dashboard rotation (ms)
+rotationDuration: 10000
+# define the interval used by Mozaïk Bus to call registered APIs
+apisPollInterval: 1000000
+
+dashboards:
+- columns: 4
+  rows:    3
+  title:   Archivers Stats
+  widgets:
+  - extension:    airtable
+    widget:       Table
+    title:        Datarescue Events
+    table:        Events
+    view:         Data Rescues
+    columns:      3
+    rows:         1
+    x:            0
+    y:            1
+  - extension:    airtable
+    widget:       SumField
+    title:        Total Attendees
+    table:        Events
+    view:         Data Rescues
+    field:        Est. Attendees
+    unit:         Attendees
+    columns:      1
+    rows:         1
+    x:            0
+    y:            0
+  - extension:    json
+    widget:       Data
+    title:        Total Uploaded TB
+    url:          https://drp-upload.herokuapp.com/stats?dir=remote
+    headers:
+      Authorization: Basic ZGlkeW91YWRkeW91cjptZXRhZGF0YQ==
+    alter:        (data) => (data.reduce((a, b) => b.size + a, 0)/1000/1000/1000/1000).toFixed(2)
+    unit:         TB
+    columns:      1
+    rows:         1
+    x:            1
+    y:            0 
